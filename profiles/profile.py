@@ -198,7 +198,7 @@ for i in range(params.nodeCount):
     dataset_iface = node.addInterface()
 
     # The remote file system is represented by special node.
-    dataset_fsnode = request.RemoteBlockstore("fsnode", "/dataset")
+    dataset_fsnode = request.RemoteBlockstore("fsnode", "/mydata")
     # This URN is displayed in the web interfaace for your dataset.
     dataset_fsnode.dataset = params.dataset
     #
