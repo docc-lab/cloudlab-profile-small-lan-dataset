@@ -21,6 +21,9 @@ import geni.rspec.pg as pg
 # Emulab specific extensions.
 import geni.rspec.emulab as emulab
 
+# Import uuid for unique fsnode name
+import uuid
+
 # Create a portal context, needed to defined parameters
 pc = portal.Context()
 
@@ -199,6 +202,7 @@ for i in range(params.nodeCount):
 
     # The remote file system is represented by special node.
     dataset_fsnode = request.RemoteBlockstore("fsnode", "/mydata")
+    # dataset_fsnode = request.RemoteBlockstore("fsnode" + str(uuid.uuid4()), "/mydata")
     # This URN is displayed in the web interfaace for your dataset.
     dataset_fsnode.dataset = params.dataset
     #
@@ -226,8 +230,8 @@ for i in range(params.nodeCount):
     # changes to a clone dataset are ephemeral, and then lose some
     # important changes when you terminate the experiment.
     #
-    dataset_fsnode.readonly = True
-    # dataset_fsnode.rwpersist = True
+    # dataset_fsnode.readonly = True
+    dataset_fsnode.rwpersist = True
 
     # Now we add the link between the node and the special node
     fslink = request.Link("fslink")
