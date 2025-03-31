@@ -1,4 +1,9 @@
-"""Variable number of nodes in a lan. You have the option of picking from one
+"""
+Modification of small-lan profile with an addition long-term dataset.
+
+----------------------------------------
+
+Variable number of nodes in a lan. You have the option of picking from one
 of several standard images we provide, or just use the default (typically a recent
 version of Ubuntu). You may also optionally pick the specific hardware type for
 all the nodes in the lan. 
