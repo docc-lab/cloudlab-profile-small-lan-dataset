@@ -226,8 +226,8 @@ for i in range(params.nodeCount):
     # changes to a clone dataset are ephemeral, and then lose some
     # important changes when you terminate the experiment.
     #
-    # dataset_fsnode.readonly = True
-    dataset_fsnode.rwpersist = True
+    dataset_fsnode.readonly = True
+    # dataset_fsnode.rwpersist = True
 
     # Now we add the link between the node and the special node
     fslink = request.Link("fslink")
